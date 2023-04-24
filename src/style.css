@@ -1,0 +1,40 @@
+h1{
+    text-align: center;
+    font-family: fantasy;
+    font-size: 250%;
+}
+
+.linea{
+    border-top: 1px solid black;
+    height: 2px;
+    max-width: 80%;
+    padding: 0;
+    margin: 2px auto 0 auto;
+}
+
+#movies-button{
+    text-align: center;
+    background: transparent;
+}
+#image-movies{
+    margin: 0 auto;
+    Text-align: center;
+    Align-content: center;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    width:50%;
+    height:20%;
+    margin-left:24%  
+}
+
+#imagen-baner{
+    width:60%;
+    height:200px;
+    margin-left:20%
+}
+
+body{
+    background-color:rgb(212 221 221);
+}
