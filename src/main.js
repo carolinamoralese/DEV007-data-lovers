@@ -12,7 +12,10 @@ console.log(data.films[6].people[4].name);
 
 
 const buttonPeliculas = document.getElementById("movies")
+const imageMovies= document.getElementById("image-movies")
 buttonPeliculas.addEventListener("click",showMovies)
+imageMovies.addEventListener("click", showMovies)
+
 
 function showMovies(){
     homeScreen.style.display="none"
