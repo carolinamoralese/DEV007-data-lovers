@@ -86,3 +86,7 @@ body{
     border-radius: 76px;
 
 }
+
+.select{
+    display: none;
+}
