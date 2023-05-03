@@ -25,9 +25,9 @@ h1{
     justify-content: center;
     align-items: center;
     align-self: center;
-    width:50%;
+    width:60%;
     height:20%;
-    margin-left:24%  
+    margin-left:19%  
 }
 
 #imagen-baner{
@@ -89,4 +89,57 @@ body{
 
 .select{
     display: none;
+}
+
+
+/* Estilos para el botón de filtro */
+.select{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition-duration: 0.4s;
+  }
+  
+  /* Estilos para el hover del botón */
+  .select:hover{
+    background-color: #3e8e41;
+    color: white;
+  }
+  
+  /* Estilos para el foco del botón */
+  .select:focus{
+    outline: none;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  }
+
+  .div-select{
+    padding: 10px 24px;
+    display: flex;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+  /* Estilos para el hover del botón */
+  .select:hover{
+    background-color: #3e8e41;
+    color: white;
+  }
+  
+  /* Estilos para el foco del botón */
+  .select:focus{
+    outline: none;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  }
+.input{
+    width: 10%;
+    height: 62%;
+ 
 }

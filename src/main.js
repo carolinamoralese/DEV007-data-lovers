@@ -1,4 +1,4 @@
-import { filtrarPorAnyo } from './data.js'
+import { filtrarPorAnyo, searchName } from './data.js'
 
 import data from './data/ghibli/ghibli.js';
 
@@ -11,15 +11,14 @@ console.log(dataStudioGhibli);
 //aqui se crea la variable que contiene todas las peliculas
 const cardContainer = document.getElementById("card-container");
 
-//aqui se crea la variable que guarda elementos de la pagina inicial
-//const homeScreen = document.getElementById("root");
-
-
 
 //Aquí solo agarramos el select que tiene el id myselect
 const seleccionador = document.getElementById("select-director");
 const selectYear = document.getElementById("select-year");
 //se oculta la lista donde se selecciona el director para que no aparezca en la pantalla de inicio
+
+
+const inputBuscar = document.getElementById("search");
 
 
 //aqui se crea variable que agarra el ID (del boton de peliculas y a imagen de peliculas)
@@ -194,6 +193,18 @@ selectYear.addEventListener("change", (e) => {
 
     showMovies(resultFilterYear)
 });
+
+
+inputBuscar.addEventListener("input", function (){
+    const filterName = searchName(dataStudioGhibli,inputBuscar.value);
+
+    console.log(filterName)
+    if(filterName.length === 0){
+        alert("No se encontraron resultados");
+    }
+    showMovies(filterName);
+});
+
 
 
 
