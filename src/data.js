@@ -21,3 +21,23 @@ export const searchName = (data,nombreBuscar) => {
   const dataFiltrada = data.filter((studioGhibli) => studioGhibli.title.toLowerCase().includes(nombreBuscar.toLowerCase()))
   return dataFiltrada
 }
+
+//se crea funcion para ordenar de forma alfabetica, ascdente
+export function orderMovies(data,upward) {
+  const dataFiltrada = data.sort((a, b) =>{
+    const nameA = a.title;
+    const nameB = b.title;
+    if(nameA < nameB){
+      return -1;
+    }else{
+      return 1
+    }
+    
+  })
+  if(upward === "AZ"){
+    return dataFiltrada
+  } else {
+    const inverso = dataFiltrada.reverse();
+    return dataFiltrada
+  }
+}

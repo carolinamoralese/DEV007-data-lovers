@@ -1,4 +1,4 @@
-import { filtrarPorAnyo, searchName } from './data.js'
+import { filtrarPorAnyo, searchName, orderMovies } from './data.js'
 
 import data from './data/ghibli/ghibli.js';
 
@@ -12,13 +12,11 @@ console.log(dataStudioGhibli);
 const cardContainer = document.getElementById("card-container");
 
 
-//Aquí solo agarramos el select que tiene el id myselect
+//Aquí solo agarramos el select que tiene el id myselect, selecte year y busqueda por nombre
 const seleccionador = document.getElementById("select-director");
 const selectYear = document.getElementById("select-year");
-//se oculta la lista donde se selecciona el director para que no aparezca en la pantalla de inicio
-
-
 const inputBuscar = document.getElementById("search");
+const selectOrderMovies = document.getElementById("order-movies")
 
 
 //aqui se crea variable que agarra el ID (del boton de peliculas y a imagen de peliculas)
@@ -31,8 +29,7 @@ showSelect(dataStudioGhibli);
 //funcion para mostrar las peliculas cuando el usario da click al boton o la imagen 
 function showMovies(pelis) {
     cardContainer.innerHTML = "";
-    //Aqui se oculta la patalla principal que muestra la imagen de los personaje y el boton de peliculas
-    // homeScreen.style.display="none";
+    
 
     pelis.forEach((film) => {
 
@@ -59,8 +56,6 @@ function showMovies(pelis) {
 //funcion para mostrar las peliculas cuando el usario da click al boton o la imagen 
 function showSelect(pelis) {
 
-    //Aqui se oculta la patalla principal que muestra la imagen de los personaje y el boton de peliculas
-    // homeScreen.style.display="none";
 
     //Aqui mostramos la lista desplegabl de los directores
     seleccionador.style.display = "block";
@@ -190,22 +185,21 @@ function showFilmsDirector(option) {
 selectYear.addEventListener("change", (e) => {
     const valueOption = e.target.value;
     const resultFilterYear = filtrarPorAnyo(dataStudioGhibli, valueOption);
-
     showMovies(resultFilterYear)
 });
 
 
-inputBuscar.addEventListener("input", function (){
+inputBuscar.addEventListener("input", () => {
     const filterName = searchName(dataStudioGhibli,inputBuscar.value);
-
-    console.log(filterName)
     if(filterName.length === 0){
         alert("No se encontraron resultados");
     }
     showMovies(filterName);
 });
 
-
-
-
+selectOrderMovies.addEventListener("change", (e) => {
+    const valueOption = e.target.value;
+    const resultOrderMovies = orderMovies(dataStudioGhibli, valueOption);
+    showMovies(resultOrderMovies);
+});
 // solo mover el filtro de director, el ciclo for y cambiar por un filtre
