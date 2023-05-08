@@ -1,8 +1,11 @@
 h1 {
     text-align: center;
-    font-family: fantasy;
-    font-size: 250%;
-    font-family: cursive;
+    font-family: Papyrus, fantasy; 
+    font-size: 24px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 700; 
+    line-height: 26.4px;
 }
 
 
@@ -26,13 +29,7 @@ h2 {
 }
 
 #image-movies {
-    margin: 0 auto;
-    Text-align: center;
-    Align-content: center;
     vertical-align: middle;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
     width: 60%;
     height: 20%;
     margin-left: 19%
@@ -46,6 +43,7 @@ h2 {
 
 body {
     background-color: rgb(212 221 221);
+    width: 100%;
 }
 
 
@@ -156,36 +154,41 @@ body {
 
 }
 
-/*
-Estilos generales para pantallas más grandes
-Estilos para pantallas de menos de 500px */
 @media(max-width: 639px){
 
-    /* Ajustes para el encabezado */
-    h1{
-        font-size: 90%;
-        margin-bottom: 0.5rem;
-
+    #imagen-baner{
+        justify-content: center;
+        margin: 6px 25px;
+        width: 250px;
+        height: 80px;
         }
 
+    /* Ajustes para el encabezado */
+    h1 {
+        font-family: Papyrus, fantasy; 
+        font-size: 18px; 
+        font-style: normal; 
+        font-variant: normal; 
+        font-weight: 450; 
+        line-height: 26.4px;
+    }
+    /*Ajustes para los botones de búsqueda*/
+    .div-select {
+        display: flex;
+        cursor: pointer;
+        width: 100%;
+    }
     /* Ajustes para la sección de contenido */ 
     .card-container{
         margin:14%;
-        padding: 1rem;
         width: 50px;
         height: 50px;
+        flex-wrap: wrap;
     
     }
-
-    /* Ajustes para las imágenes */ 
-    img{
-        max-width: 100%;
-        height: auto;
-        }
-
-    /* Ajustes para los enlaces */ 
-    a{
-        font-size: 0.8rem;
-        }
-}
-
+    
+    #image-movies{
+        width: 250px;
+        height: 80px;
+    }
+    }

@@ -29,179 +29,174 @@ showSelect(dataStudioGhibli);
 
 //muestra las peliculas
 function showMovies(films) {
-    cardContainer.innerHTML = "";
-    
-    films.forEach((film) => {
+  cardContainer.innerHTML = "";
 
-        //se muestra las peliculas, se combina HTML en el JS con las comillas invertidas
-        //se pone el mismo id a los 3 elementos, titulo, imagen, div para identificar el evento del click 
-        const divFilm = document.createElement("div");
-        divFilm.innerHTML =
-        `<p class="title-card" id="${film.title}">${film.title}</p>
+  films.forEach((film) => {
+
+    //se muestra las peliculas, se combina HTML en el JS con las comillas invertidas
+    //se pone el mismo id a los 3 elementos, titulo, imagen, div para identificar el evento del click 
+    const divFilm = document.createElement("div");
+    divFilm.innerHTML =
+      `<p class="title-card" id="${film.title}">${film.title}</p>
         <img class="card" src="${film.poster}" id="${film.id}">`
 
-        cardContainer.appendChild(divFilm)
+    cardContainer.appendChild(divFilm)
 
 
-        //se le pone evento al click cuando el usuario seleccione una pelicula y se ejecute la funcion de mostrar los personaje de la pelicula
-        divFilm.addEventListener("click", () => {
-            showInfoFilm(film.id)
-        });
+    //se le pone evento al click cuando el usuario seleccione una pelicula y se ejecute la funcion de mostrar los personaje de la pelicula
+    divFilm.addEventListener("click", () => {
+      showInfoFilm(film.id)
+    });
 
-    })
+  })
 }
 
 //funcion para mostrar las peliculas cuando el usario da click al boton o la imagen 
 function showSelect(pelis) {
 
+  //Aqui mostramos la lista desplegabl de los directores
+  seleccionador.style.display = "block";
+  selectYear.style.display = "block";
 
-    //Aqui mostramos la lista desplegabl de los directores
-    seleccionador.style.display = "block";
-    selectYear.style.display = "block";
+  //Aquí creamos variables para los directores unicos
+  const directoresUnicos = [];
+  const filmYear = [];
 
-    //Aquí creamos variables para los directores unicos
-    const directoresUnicos = [];
-    const filmYear = [];
+  pelis.forEach((film) => {
+    //Aqui preguntamos si nuestra variable directores unicos tiene el director
+    //Si no lo tiene, le agregamos el director
+    //se utiliza la función include
+    if (!directoresUnicos.includes(film.director)) {
+      directoresUnicos.push(film.director);
+      //Aquí creamos el elemento llamado opcion y llamamos option
+      const option = document.createElement("option");
+      option.value = film.director;
+      option.text = film.director;
 
-    pelis.forEach((film) => {
-        //Aqui preguntamos si nuestra variable directores unicos tiene el director
-        //Si no lo tiene, le agregamos el director
-        //se utiliza la función include
-        if (!directoresUnicos.includes(film.director)) {
-            directoresUnicos.push(film.director);
-            //Aquí creamos el elemento llamado opcion y llamamos option
-            const option = document.createElement("option");
-            option.value = film.director;
-            option.text = film.director;
+      //Aquí hacemos un openchild que abre un elemnto hijo a un elemto padre que es un select- es parecido a lo del inner.HTML
+      seleccionador.appendChild(option);
+    }
 
-            //Aquí hacemos un openchild que abre un elemnto hijo a un elemto padre que es un select- es parecido a lo del inner.HTML
-            seleccionador.appendChild(option);
-        }
+    console.log(directoresUnicos)
 
-        console.log(directoresUnicos)
+    //Aqui preguntamos si nuestra variable directores unicos tiene el director
+    //Si no lo tiene, le agregamos el director
+    //se utiliza la función include
+    if (!filmYear.includes(film.release_date)) {
+      filmYear.push(film.release_date);
+      //Aquí creamos el elemento llamado opcion y llamamos option
+      const option = document.createElement("option");
+      option.value = film.release_date;
+      option.text = film.release_date;
+      //Aquí hacemos un openchild que abre un elemnto hijo a un elemto padre que es un select- es parecido a lo del inner.HTML
+      selectYear.appendChild(option);
+    }
+    console.log(filmYear)
 
-        //Aqui preguntamos si nuestra variable directores unicos tiene el director
-        //Si no lo tiene, le agregamos el director
-        //se utiliza la función include
-        if (!filmYear.includes(film.release_date)) {
-            filmYear.push(film.release_date);
-            //Aquí creamos el elemento llamado opcion y llamamos option
-            const option = document.createElement("option");
-            option.value = film.release_date;
-            option.text = film.release_date;
-            //Aquí hacemos un openchild que abre un elemnto hijo a un elemto padre que es un select- es parecido a lo del inner.HTML
-            selectYear.appendChild(option);
-        }
-        console.log(filmYear)
-
-
-    })
+  })
 }
 
 
 function showInfoFilm(filmId) {
 
-    cardContainer.innerHTML = ""
-    cardCharacters.innerHTML = "<h2>Personajes<hr><br></h2>"
+  cardContainer.innerHTML = ""
+  cardCharacters.innerHTML = "<h2>Personajes<hr><br></h2>"
 
-    //se crea la variable que guarda la pelicula con todos los atributos(personajes-lugares-vehiculos)
-    let filmSelected = getFilmById(dataStudioGhibli, filmId)
-    //Aqui muestra los personajes correspondientes a la pelicula
-    filmSelected.people.forEach((character) => {
+  //se crea la variable que guarda la pelicula con todos los atributos(personajes-lugares-vehiculos)
+  let filmSelected = getFilmById(dataStudioGhibli, filmId)
+  //Aqui muestra los personajes correspondientes a la pelicula
+  filmSelected.people.forEach((character) => {
 
-        let optionCharcter;
-        optionCharcter = `
+    let optionCharcter;
+    optionCharcter = `
         <div name= "character"  id=${character.name}>
         <p class="title-card">${character.name}</p>
         <img class="card" src =${character.img} >
         </div>
         `
-        cardCharacters.innerHTML += optionCharcter
-    })
+    cardCharacters.innerHTML += optionCharcter
+  })
 
 
 
-    cardPlaces.innerHTML = "<h2>Lugares<hr></h2>"
-    
-    filmSelected.locations.forEach((location) => {
-        let optionLocation;
-        optionLocation = `
+  cardPlaces.innerHTML = "<h2>Lugares<hr></h2>"
+
+  filmSelected.locations.forEach((location) => {
+    let optionLocation;
+    optionLocation = `
         <div name="location" id=${location.name}>
         <p class="title-card">${location.name}</p>
         <img class="card" src=${location.img}>
         </div>
         `
-        cardPlaces.innerHTML += optionLocation
-    })
+    cardPlaces.innerHTML += optionLocation
+  })
 
-    if(filmSelected.vehicles.length > 0){
-        cardVehicles.innerHTML = "<h2>Vehiculos<hr></h2>"
-    
-        filmSelected.vehicles.forEach((vehicle) => {
-            let optionVehicle;
-            optionVehicle = `
+  if (filmSelected.vehicles.length > 0) {
+    cardVehicles.innerHTML = "<h2>Vehiculos<hr></h2>"
+
+    filmSelected.vehicles.forEach((vehicle) => {
+      let optionVehicle;
+      optionVehicle = `
             <div name="vehicle" id=${vehicle.name}>
             <p class="title-card">${vehicle.name}</p>
             <img class="card" src=${vehicle.img}>
             </div>
             `
-            cardVehicles.innerHTML += optionVehicle
-        })
-    }
+      cardVehicles.innerHTML += optionVehicle
+    })
+  }
 }
 
 
 
 //Aqui llamamos la funcion cuando el usuario de click
-seleccionador.addEventListener("change",(e) =>{
+seleccionador.addEventListener("change", (e) => {
 
-    const valueOp = e.target.value;
-    const dataDirector = showFilmsDirector(valueOp);
-    showMovies(dataDirector)
+  const valueOp = e.target.value;
+  const dataDirector = showFilmsDirector(valueOp);
+  showMovies(dataDirector)
 });
 
 
 
 //Aqui se crea la funcion para quemuestre las peliculas del director
 function showFilmsDirector(option) {
-    let filmsDirectorSlected = [];
+  let filmsDirectorSlected = [];
 
 
-    //se recorren todas las peliculas para obetner las peliculas director seleccionado
-    for (let i = 0; i < dataStudioGhibli.length; i++) {
+  //se recorren todas las peliculas para obetner las peliculas director seleccionado
+  for (let i = 0; i < dataStudioGhibli.length; i++) {
 
-        //se compara que el director de la pelicula en la iteracion con el director que el usuario selecciono
-        if (dataStudioGhibli[i].director == option) {
-            //guarda en un array las peliculas del director
-            filmsDirectorSlected.push(dataStudioGhibli[i]);
-        }
-        // console.log(dataStudioGhibli.films[i].director)
+    //se compara que el director de la pelicula en la iteracion con el director que el usuario selecciono
+    if (dataStudioGhibli[i].director == option) {
+      //guarda en un array las peliculas del director
+      filmsDirectorSlected.push(dataStudioGhibli[i]);
     }
+    // console.log(dataStudioGhibli.films[i].director)
+  }
 
-    //Aqui se borrar las peliculas del director cada vez que el usario le de click
-    return filmsDirectorSlected;
+  //Aqui se borrar las peliculas del director cada vez que el usario le de click
+  return filmsDirectorSlected;
 
 }
 
-
-
 selectYear.addEventListener("change", (e) => {
-    const valueOption = e.target.value;
-    const resultFilterYear = filtrarPorAnyo(dataStudioGhibli, valueOption);
-    showMovies(resultFilterYear)
+  const valueOption = e.target.value;
+  const resultFilterYear = filtrarPorAnyo(dataStudioGhibli, valueOption);
+  showMovies(resultFilterYear)
 });
 
-
 inputBuscar.addEventListener("input", () => {
-    const filterName = searchName(dataStudioGhibli,inputBuscar.value);
-    if(filterName.length === 0){
-        alert("No se encontraron resultados");
-    }
-    showMovies(filterName);
+  const filterName = searchName(dataStudioGhibli, inputBuscar.value);
+  if (filterName.length === 0) {
+    alert("No se encontraron resultados");
+  }
+  showMovies(filterName);
 });
 
 selectOrderMovies.addEventListener("change", (e) => {
-    const valueOption = e.target.value;
-    const resultOrderMovies = orderMovies(dataStudioGhibli, valueOption);
-    showMovies(resultOrderMovies);
+  const valueOption = e.target.value;
+  const resultOrderMovies = orderMovies(dataStudioGhibli, valueOption);
+  showMovies(resultOrderMovies);
 });
