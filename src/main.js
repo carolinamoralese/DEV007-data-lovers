@@ -10,13 +10,16 @@ console.log(dataStudioGhibli);
 
 //se crea la variable que contiene todas las peliculas
 const cardContainer = document.getElementById("card-container");
+const cardCharacters = document.getElementById("card-characters");
+const cardVehicles = document.getElementById("card-vehicles");
+const cardPlaces = document.getElementById("card-places");
 
 
 //se obtienen los elementos de las opciones de busqueda 
 const seleccionador = document.getElementById("select-director");
 const selectYear = document.getElementById("select-year");
 const inputBuscar = document.getElementById("search");
-const selectOrderMovies = document.getElementById("order-movies")
+const selectOrderMovies = document.getElementById("order-movies");
 
 
 // se muestran las peliculas y las opciones para los filtros de directr y año
@@ -98,7 +101,8 @@ function showSelect(pelis) {
 
 function showInfoFilm(filmId) {
 
-    cardContainer.innerHTML = "<br><br><br><h1>Personajes</h1>"
+    cardContainer.innerHTML = ""
+    cardCharacters.innerHTML = "<h2>Personajes</h2>"
 
     //se crea la variable que guarda la pelicula con todos los atributos(personajes-lugares-vehiculos)
     let filmSelected = getFilmById(dataStudioGhibli, filmId)
@@ -112,12 +116,12 @@ function showInfoFilm(filmId) {
         <img class="card" src =${character.img} >
         </div>
         `
-        cardContainer.innerHTML += optionCharcter
+        cardCharacters.innerHTML += optionCharcter
     })
 
 
 
-    cardContainer.innerHTML += "<br><br><br><br><h1>lugares</h1>"
+    cardPlaces.innerHTML = "<h2>Lugares</h2>"
     
     filmSelected.locations.forEach((location) => {
         let optionLocation;
@@ -127,22 +131,23 @@ function showInfoFilm(filmId) {
         <img class="card" src=${location.img}>
         </div>
         `
-        cardContainer.innerHTML += optionLocation
+        cardPlaces.innerHTML += optionLocation
     })
 
-    cardContainer.innerHTML += "<br><br><br><br><h1>Vehiculos</h1>"
+    if(filmSelected.vehicles.length > 0){
+        cardVehicles.innerHTML = "<h2>Vehiculos</h2>"
     
-    filmSelected.vehicles.forEach((vehicle) => {
-        let optionVehicle;
-        optionVehicle = `
-        <div name="vehicle" id=${vehicle.name}>
-        <p class="title-card">${vehicle.name}</p>
-        <img class="card" src=${vehicle.img}>
-        </div>
-        `
-        cardContainer.innerHTML += optionVehicle
-    })
-
+        filmSelected.vehicles.forEach((vehicle) => {
+            let optionVehicle;
+            optionVehicle = `
+            <div name="vehicle" id=${vehicle.name}>
+            <p class="title-card">${vehicle.name}</p>
+            <img class="card" src=${vehicle.img}>
+            </div>
+            `
+            cardVehicles.innerHTML += optionVehicle
+        })
+    }
 }
 
 
