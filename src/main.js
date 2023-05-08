@@ -42,7 +42,7 @@ function showMovies(films) {
 
         //se le pone evento al click cuando el usuario seleccione una pelicula y se ejecute la funcion de mostrar los personaje de la pelicula
         divFilm.addEventListener("click", () => {
-            showCharacter(film.id)
+            showInfoFilm(film.id)
         });
 
     })
@@ -96,9 +96,9 @@ function showSelect(pelis) {
 }
 
 
-function showCharacter(filmId) {
+function showInfoFilm(filmId) {
 
-    cardContainer.innerHTML = ""
+    cardContainer.innerHTML = "<br><br><br><h1>Personajes</h1>"
 
     //se crea la variable que guarda la pelicula con todos los atributos(personajes-lugares-vehiculos)
     let filmSelected = getFilmById(dataStudioGhibli, filmId)
@@ -113,6 +113,34 @@ function showCharacter(filmId) {
         </div>
         `
         cardContainer.innerHTML += optionCharcter
+    })
+
+
+
+    cardContainer.innerHTML += "<br><br><br><br><h1>lugares</h1>"
+    
+    filmSelected.locations.forEach((location) => {
+        let optionLocation;
+        optionLocation = `
+        <div name="location" id=${location.name}>
+        <p class="title-card">${location.name}</p>
+        <img class="card" src=${location.img}>
+        </div>
+        `
+        cardContainer.innerHTML += optionLocation
+    })
+
+    cardContainer.innerHTML += "<br><br><br><br><h1>Vehiculos</h1>"
+    
+    filmSelected.vehicles.forEach((vehicle) => {
+        let optionVehicle;
+        optionVehicle = `
+        <div name="vehicle" id=${vehicle.name}>
+        <p class="title-card">${vehicle.name}</p>
+        <img class="card" src=${vehicle.img}>
+        </div>
+        `
+        cardContainer.innerHTML += optionVehicle
     })
 
 }
@@ -148,21 +176,6 @@ function showFilmsDirector(option) {
     //Aqui se borrar las peliculas del director cada vez que el usario le de click
     return filmsDirectorSlected;
 
-    //Aqui se muestran las peliculas del director seleccionado
-    /*filmsDirectorSlected.forEach((film) => {
-
-        //Aqui se muestran las peliculas, se inserta en el HTML con el inner.HTML
-        cardFilmsDirector.innerHTML += `
-        <div name="films" id="${film.title}">
-        <p class="title-films">${film.title}</p>
-        <img class="card-films" src="${film.poster}">
-        <p>${film.description}</p?
-        </div>
-        `;
-    })*/
-
-    //metodo filter
-
 }
 
 
@@ -187,4 +200,3 @@ selectOrderMovies.addEventListener("change", (e) => {
     const resultOrderMovies = orderMovies(dataStudioGhibli, valueOption);
     showMovies(resultOrderMovies);
 });
-// solo mover el filtro de director, el ciclo for y cambiar por un filtre
