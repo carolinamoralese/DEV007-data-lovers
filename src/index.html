@@ -1,66 +1,65 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
- 
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div style="justify-content: center;">
     <figure>
-      <img id="imagen-baner" src="./imagenes/ghibliprojectbanner.jpg" 
-      alt="baner de ghibli studio, en el fondo hay un bosque con un dibujo  ">
+      <img id="imagen-baner" src="./imagenes/ghibliprojectbanner.jpg"
+        alt="baner de ghibli studio, en el fondo hay un bosque con un dibujo  ">
     </figure>
 
-  
+
     <div id="root">
-        
+
       <h1>Viento calido del desierto</h1>
 
       <div class="linea"></div>
       <br><br>
-
-      
       <br><br>
-      
+
     </div>
 
-  <div class="div-select">
-    
-    
-    <div id="search-button">
-      <input type="text"  class="select" id="search" placeholder="Buscar por el nombre" required>
+    <div class="div-select">
+
+      <div id="search-button">
+        <input type="text" class="select" id="search" placeholder="Buscar por el nombre" required>
+      </div>
+
+      <div><select class="select" id="select-director">
+          <option disabled selected value="">Selecione el director</option>
+        </select></div>
+
+      <div><select class="select" id="select-year">
+          <option disabled selected value="">Selecione el año</option>
+        </select></div>
+
+      <div><select class="select" id="order-movies">
+          <option disabled selected value="">Ordenar por nombre</option>
+          <option value="AZ">Ordenar de la A - Z</option>
+          <option value="ZA">Ordenar de la Z - A</option>
+        </select></div>
+
     </div>
 
-    <div><select class="select" id="select-director">
-      <option disabled selected value="">Selecione el director</option>
-    </select></div>
-
-    <div><select class="select" id="select-year">
-      <option disabled selected value="">Selecione el año</option>
-    </select></div>
-
-    <div><select class="select" id="order-movies">
-      <option disabled selected value="">Ordenar por nombre</option>
-      <option value="AZ">Ordenar de la A - Z</option>
-      <option value="ZA">Ordenar de la Z - A</option>
-    </select></div>
-
-  </div>  
-   
     <div class="card-container" id="card-container"></div>
     <div class="card-container" id="card-characters"></div>
     <div class="card-container" id="card-places"></div>
     <div class="card-container" id="card-vehicles"></div>
-    
-  
-    <div>
-      <figure>
-        <img id="image-movies" src="./imagenes/movie.jpg">
-      </figure>
-    </div>
 
-    <script src="main.js" type="module"></script>
-  </body>
+    <footer>
+      <figure>
+        <img id="image-movies" src="./imagenes/movie.jpg" width="50%">
+      </figure>
+    </footer>
+  </div>
+  <script src="main.js" type="module"></script>
+</body>
+
 </html>
