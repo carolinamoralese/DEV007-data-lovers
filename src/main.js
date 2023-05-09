@@ -102,7 +102,7 @@ function showSelect(pelis) {
 function showInfoFilm(filmId) {
 
     cardContainer.innerHTML = ""
-    cardCharacters.innerHTML = "<h2>Personajes</h2>"
+    cardCharacters.innerHTML = "<h2>Personajes<hr><br></h2>"
 
     //se crea la variable que guarda la pelicula con todos los atributos(personajes-lugares-vehiculos)
     let filmSelected = getFilmById(dataStudioGhibli, filmId)
@@ -121,7 +121,7 @@ function showInfoFilm(filmId) {
 
 
 
-    cardPlaces.innerHTML = "<h2>Lugares</h2>"
+    cardPlaces.innerHTML = "<h2>Lugares<hr></h2>"
     
     filmSelected.locations.forEach((location) => {
         let optionLocation;
@@ -135,7 +135,7 @@ function showInfoFilm(filmId) {
     })
 
     if(filmSelected.vehicles.length > 0){
-        cardVehicles.innerHTML = "<h2>Vehiculos</h2>"
+        cardVehicles.innerHTML = "<h2>Vehiculos<hr></h2>"
     
         filmSelected.vehicles.forEach((vehicle) => {
             let optionVehicle;
