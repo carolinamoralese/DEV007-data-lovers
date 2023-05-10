@@ -1,14 +1,12 @@
 h1 {
     text-align: center;
-    font-family: Papyrus, fantasy; 
-    font-size: 24px; 
-    font-style: normal; 
-    font-variant: normal; 
-    font-weight: 700; 
+    font-family: Papyrus, fantasy;
+    font-size: 24px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
     line-height: 26.4px;
 }
-
-
 
 h2 {
     text-align: center;
@@ -28,24 +26,16 @@ h2 {
     background: transparent;
 }
 
-#image-movies {
-    vertical-align: middle;
-    width: 60%;
-    height: 20%;
-    margin-left: 19%
-}
-
 #imagen-baner {
     width: 60%;
     height: 200px;
-    margin-left: 20%
+    margin-left: 20%;
 }
 
 body {
     background-color: rgb(212 221 221);
     width: 100%;
 }
-
 
 .card {
     width: 228px;
@@ -97,7 +87,6 @@ body {
     display: none;
 }
 
-
 /* Estilos para el botón de filtro */
 .select {
     background-color: #4CAF50;
@@ -128,7 +117,6 @@ body {
 
 .div-select {
     padding: 10px 24px;
-    display: flex;
     margin: 4px 2px;
     cursor: pointer;
     width: 100%;
@@ -154,41 +142,83 @@ body {
 
 }
 
-@media(max-width: 639px){
+@media(max-width: 639px) {
 
-    #imagen-baner{
+    body{
+        margin: 1px;
+        border: 1px;
+        padding: 1px;
+    }
+
+    figure {
+        margin: 0px;
+    }
+
+    #imagen-baner {
+        display: flex;
         justify-content: center;
-        margin: 6px 25px;
+        align-items: center;
         width: 250px;
         height: 80px;
-        }
+        margin: 30px;
+        border: 30px;
+    }
 
     /* Ajustes para el encabezado */
-    h1 {
-        font-family: Papyrus, fantasy; 
-        font-size: 18px; 
-        font-style: normal; 
-        font-variant: normal; 
-        font-weight: 450; 
-        line-height: 26.4px;
+    .linea{
+        margin: 10px;
     }
+    h1 {
+        font-family: Papyrus, fantasy;
+        font-size: 18px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 250px;
+        line-height: 10px;
+        margin: 10px;
+    }
+
     /*Ajustes para los botones de búsqueda*/
-    .div-select {
+    .select {
+        background-color: #4CAF50;
+        border: none;
+        padding: 05px 03px;
+        text-align: center;
+        display: flex;
+        font-size: 08px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+        transition-duration: 0.4s;
+    }
+    /*.div-select {
         display: flex;
         cursor: pointer;
-        width: 100%;
+        font-size: 5px;
+        height: 10px;
+        width: 10px;
+        padding: 05px 10px;
+        margin: 4px 2px;
+    }*/
+
+    /* Ajustes para la sección de contenido */
+
+    .card {
+        justify-content: center;
+        flex-grow: auto;
+        width: 150px;
+        height: 150px;
+        display: flex;
+        margin: 30px;
+        border-radius: 30px;
+        
     }
-    /* Ajustes para la sección de contenido */ 
-    .card-container{
-        margin:14%;
-        width: 50px;
-        height: 50px;
-        flex-wrap: wrap;
-    
+
+    #card-container.card-container{
+        display: flex;
+        margin: 20px;
+        padding: 0%;
     }
-    
-    #image-movies{
-        width: 250px;
-        height: 80px;
-    }
-    }
+
+
+}
