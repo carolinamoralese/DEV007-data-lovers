@@ -5,7 +5,7 @@ import data from './data/ghibli/ghibli.js';
 
 //se crea la variable que guarda toda la data
 const dataStudioGhibli = data.films;
-console.log(dataStudioGhibli);
+
 
 
 //se crea la variable que contiene todas las peliculas
@@ -13,6 +13,9 @@ const cardContainer = document.getElementById("card-container");
 const cardCharacters = document.getElementById("card-characters");
 const cardVehicles = document.getElementById("card-vehicles");
 const cardPlaces = document.getElementById("card-places");
+const modal = document.getElementById("modal")
+const modalInfo = document.getElementById("modal-info")
+const close = document.getElementById("close")
 
 
 //se obtienen los elementos de las opciones de busqueda 
@@ -25,6 +28,7 @@ const selectOrderMovies = document.getElementById("order-movies");
 // se muestran las peliculas y las opciones para los filtros de directr y año
 showMovies(dataStudioGhibli);
 showSelect(dataStudioGhibli);
+//modal.style.display="none"
 
 
 //muestra las peliculas
@@ -77,7 +81,6 @@ function showSelect(pelis) {
       seleccionador.appendChild(option);
     }
 
-    console.log(directoresUnicos)
 
     //Aqui preguntamos si nuestra variable directores unicos tiene el director
     //Si no lo tiene, le agregamos el director
@@ -91,7 +94,7 @@ function showSelect(pelis) {
       //Aquí hacemos un openchild que abre un elemnto hijo a un elemto padre que es un select- es parecido a lo del inner.HTML
       selectYear.appendChild(option);
     }
-    console.log(filmYear)
+
 
   })
 }
@@ -107,29 +110,36 @@ function showInfoFilm(filmId) {
   //Aqui muestra los personajes correspondientes a la pelicula
   filmSelected.people.forEach((character) => {
 
-    let optionCharcter;
-    optionCharcter = `
-        <div name= "character"  id=${character.name}>
+    
+    const divCharacter= document.createElement("div")
+    divCharacter.innerHTML = `
         <p class="title-card">${character.name}</p>
         <img class="card" src =${character.img} >
-        </div>
         `
-    cardCharacters.innerHTML += optionCharcter
+    cardCharacters.appendChild(divCharacter) 
+    divCharacter.addEventListener("click", () => {
+      showInfoCharacter(character)
+    });
+
   })
 
 
 
   cardPlaces.innerHTML = "<h2>Lugares<hr></h2>"
-
   filmSelected.locations.forEach((location) => {
+    
     let optionLocation;
     optionLocation = `
+      <div id="information-card>
         <div name="location" id=${location.name}>
         <p class="title-card">${location.name}</p>
         <img class="card" src=${location.img}>
         </div>
+      </div>
         `
+
     cardPlaces.innerHTML += optionLocation
+  
   })
 
   if (filmSelected.vehicles.length > 0) {
@@ -146,6 +156,30 @@ function showInfoFilm(filmId) {
       cardVehicles.innerHTML += optionVehicle
     })
   }
+}
+
+
+
+function showInfoCharacter(character){
+  
+
+    let info = `
+    <p class="title-card"><b>${character.name.toUpperCase()}</b></p><br><br>
+    <p><b>Genero:</b> ${character.gender}</p>
+    <p><b>Edad:</b> ${character.age}</p>
+    <p><b>Color de ojos:</b> ${character.eye_color}</p>
+    <p><b>Color de cabello:</b> ${character.hair_color}</p>
+    <p><b>Especie:</b> ${character.specie}</p>
+
+    `
+    modalInfo.innerHTML = info
+    modal.classList.add('show');
+
+    close.addEventListener('click', () => {
+      modal.classList.remove('show');
+    });
+  
+   
 }
 
 
@@ -200,3 +234,6 @@ selectOrderMovies.addEventListener("change", (e) => {
   const resultOrderMovies = orderMovies(dataStudioGhibli, valueOption);
   showMovies(resultOrderMovies);
 });
+
+
+//cursos pointer, que pase el mause y aparexca clicl 

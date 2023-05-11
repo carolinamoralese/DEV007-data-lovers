@@ -23,8 +23,6 @@ export function getFilmById(data, filmId) {
 }
 
 
-
-
 //se crea funion buscar por nombre de la pelicula
 export function searchName(data,nombreBuscar) {
   const dataFiltrada = data.filter((studioGhibli) => studioGhibli.title.toLowerCase().includes(nombreBuscar.toLowerCase()))
