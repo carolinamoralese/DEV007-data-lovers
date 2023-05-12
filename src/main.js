@@ -16,6 +16,7 @@ const cardPlaces = document.getElementById("card-places");
 const modal = document.getElementById("modal")
 const modalInfo = document.getElementById("modal-info")
 const close = document.getElementById("close")
+const cardTitle = document.getElementById("card-title")
 
 
 //se obtienen los elementos de las opciones de busqueda 
@@ -107,6 +108,13 @@ function showInfoFilm(filmId) {
 
   //se crea la variable que guarda la pelicula con todos los atributos(personajes-lugares-vehiculos)
   let filmSelected = getFilmById(dataStudioGhibli, filmId)
+
+  const divTitle = document.createElement("div")
+  divTitle.innerHTML=`
+  <p class="title-card"><b>${filmSelected.title.toUpperCase()}.</b></p>
+  `
+  cardTitle.appendChild(divTitle)
+
   //Aqui muestra los personajes correspondientes a la pelicula
   filmSelected.people.forEach((character) => {
 
