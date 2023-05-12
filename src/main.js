@@ -111,7 +111,8 @@ function showInfoFilm(filmId) {
 
   const divTitle = document.createElement("div")
   divTitle.innerHTML=`
-  <p class="title-card"><b>${filmSelected.title.toUpperCase()}.</b></p>
+    <h1 class="title-film">${filmSelected.title.toUpperCase()}<br><br></h1>
+    <p class="description">${filmSelected.description}</p>
   `
   cardTitle.appendChild(divTitle)
 
@@ -121,7 +122,7 @@ function showInfoFilm(filmId) {
     
     const divCharacter= document.createElement("div")
     divCharacter.innerHTML = `
-        <p class="title-card">${character.name}</p>
+        <p class="title-card">${character.name}</p><br><br>
         <img class="card" src =${character.img} >
         `
     cardCharacters.appendChild(divCharacter) 
@@ -131,7 +132,7 @@ function showInfoFilm(filmId) {
 
   })
 
-
+  
 
   cardPlaces.innerHTML = "<h2>Lugares<hr></h2>"
   filmSelected.locations.forEach((location) => {
@@ -173,11 +174,11 @@ function showInfoCharacter(character){
 
     let info = `
     <p class="title-card"><b>${character.name.toUpperCase()}</b></p><br><br>
-    <p><b>Genero:</b> ${character.gender}</p>
-    <p><b>Edad:</b> ${character.age}</p>
-    <p><b>Color de ojos:</b> ${character.eye_color}</p>
-    <p><b>Color de cabello:</b> ${character.hair_color}</p>
-    <p><b>Especie:</b> ${character.specie}</p>
+    <p><b>Gender:</b> ${character.gender}</p>
+    <p><b>Age:</b> ${character.age}</p>
+    <p><b>Eye Color:</b> ${character.eye_color}</p>
+    <p><b>Hair Color:</b> ${character.hair_color}</p>
+    <p><b>Specie:</b> ${character.specie}</p>
 
     `
     modalInfo.innerHTML = info
@@ -194,7 +195,10 @@ function showInfoCharacter(character){
 
 //Aqui llamamos la funcion cuando el usuario de click
 seleccionador.addEventListener("change", (e) => {
-
+  cardCharacters.innerHTML=""
+  cardPlaces.innerHTML=""
+  cardVehicles.innerHTML=""
+  cardTitle.innerHTML=""
   const valueOp = e.target.value;
   const dataDirector = showFilmsDirector(valueOp);
   showMovies(dataDirector)
@@ -224,12 +228,20 @@ function showFilmsDirector(option) {
 }
 
 selectYear.addEventListener("change", (e) => {
+  cardCharacters.innerHTML=""
+  cardPlaces.innerHTML=""
+  cardVehicles.innerHTML=""
+  cardTitle.innerHTML=""
   const valueOption = e.target.value;
   const resultFilterYear = filtrarPorAnyo(dataStudioGhibli, valueOption);
   showMovies(resultFilterYear)
 });
 
 inputBuscar.addEventListener("input", () => {
+  cardCharacters.innerHTML=""
+  cardPlaces.innerHTML=""
+  cardVehicles.innerHTML=""
+  cardTitle.innerHTML=""
   const filterName = searchName(dataStudioGhibli, inputBuscar.value);
   if (filterName.length === 0) {
     alert("No se encontraron resultados");
@@ -238,6 +250,10 @@ inputBuscar.addEventListener("input", () => {
 });
 
 selectOrderMovies.addEventListener("change", (e) => {
+  cardCharacters.innerHTML=""
+  cardPlaces.innerHTML=""
+  cardVehicles.innerHTML=""
+  cardTitle.innerHTML=""
   const valueOption = e.target.value;
   const resultOrderMovies = orderMovies(dataStudioGhibli, valueOption);
   showMovies(resultOrderMovies);
