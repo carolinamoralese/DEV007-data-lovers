@@ -107,10 +107,10 @@ function showInfoFilm(filmId) {
   cardCharacters.innerHTML = "<h2>Personajes<hr><br></h2>"
 
   //se crea la variable que guarda la pelicula con todos los atributos(personajes-lugares-vehiculos)
-  let filmSelected = getFilmById(dataStudioGhibli, filmId)
+  const filmSelected = getFilmById(dataStudioGhibli, filmId)
 
   const divTitle = document.createElement("div")
-  divTitle.innerHTML=`
+  divTitle.innerHTML = `
     <h1 class="title-film">${filmSelected.title.toUpperCase()}<br><br></h1>
     <p class="description">${filmSelected.description}</p>
   `
@@ -119,26 +119,25 @@ function showInfoFilm(filmId) {
   //Aqui muestra los personajes correspondientes a la pelicula
   filmSelected.people.forEach((character) => {
 
-    
-    const divCharacter= document.createElement("div")
+
+    const divCharacter = document.createElement("div")
     divCharacter.innerHTML = `
         <p class="title-card">${character.name}</p><br><br>
         <img class="card" src =${character.img} >
         `
-    cardCharacters.appendChild(divCharacter) 
+    cardCharacters.appendChild(divCharacter)
     divCharacter.addEventListener("click", () => {
       showInfoCharacter(character)
     });
 
   })
 
-  
+
 
   cardPlaces.innerHTML = "<h2>Lugares<hr></h2>"
   filmSelected.locations.forEach((location) => {
-    
-    let optionLocation;
-    optionLocation = `
+
+    const optionLocation = `
       <div id="information-card>
         <div name="location" id=${location.name}>
         <p class="title-card">${location.name}</p>
@@ -148,15 +147,14 @@ function showInfoFilm(filmId) {
         `
 
     cardPlaces.innerHTML += optionLocation
-  
+
   })
 
   if (filmSelected.vehicles.length > 0) {
     cardVehicles.innerHTML = "<h2>Vehiculos<hr></h2>"
 
     filmSelected.vehicles.forEach((vehicle) => {
-      let optionVehicle;
-      optionVehicle = `
+      const optionVehicle = `
             <div name="vehicle" id=${vehicle.name}>
             <p class="title-card">${vehicle.name}</p>
             <img class="card" src=${vehicle.img}>
@@ -169,10 +167,10 @@ function showInfoFilm(filmId) {
 
 
 
-function showInfoCharacter(character){
-  
+function showInfoCharacter(character) {
 
-    let info = `
+
+  const info = `
     <p class="title-card"><b>${character.name.toUpperCase()}</b></p><br><br>
     <p><b>Gender:</b> ${character.gender}</p>
     <p><b>Age:</b> ${character.age}</p>
@@ -181,24 +179,24 @@ function showInfoCharacter(character){
     <p><b>Specie:</b> ${character.specie}</p>
 
     `
-    modalInfo.innerHTML = info
-    modal.classList.add('show');
+  modalInfo.innerHTML = info
+  modal.classList.add('show');
 
-    close.addEventListener('click', () => {
-      modal.classList.remove('show');
-    });
-  
-   
+  close.addEventListener('click', () => {
+    modal.classList.remove('show');
+  });
+
+
 }
 
 
 
 //Aqui llamamos la funcion cuando el usuario de click
 seleccionador.addEventListener("change", (e) => {
-  cardCharacters.innerHTML=""
-  cardPlaces.innerHTML=""
-  cardVehicles.innerHTML=""
-  cardTitle.innerHTML=""
+  cardCharacters.innerHTML = ""
+  cardPlaces.innerHTML = ""
+  cardVehicles.innerHTML = ""
+  cardTitle.innerHTML = ""
   const valueOp = e.target.value;
   const dataDirector = showFilmsDirector(valueOp);
   showMovies(dataDirector)
@@ -208,14 +206,14 @@ seleccionador.addEventListener("change", (e) => {
 
 //Aqui se crea la funcion para quemuestre las peliculas del director
 function showFilmsDirector(option) {
-  let filmsDirectorSlected = [];
+  const filmsDirectorSlected = [];
 
 
   //se recorren todas las peliculas para obetner las peliculas director seleccionado
   for (let i = 0; i < dataStudioGhibli.length; i++) {
 
     //se compara que el director de la pelicula en la iteracion con el director que el usuario selecciono
-    if (dataStudioGhibli[i].director == option) {
+    if (dataStudioGhibli[i].director === option) {
       //guarda en un array las peliculas del director
       filmsDirectorSlected.push(dataStudioGhibli[i]);
     }
@@ -228,20 +226,20 @@ function showFilmsDirector(option) {
 }
 
 selectYear.addEventListener("change", (e) => {
-  cardCharacters.innerHTML=""
-  cardPlaces.innerHTML=""
-  cardVehicles.innerHTML=""
-  cardTitle.innerHTML=""
+  cardCharacters.innerHTML = ""
+  cardPlaces.innerHTML = ""
+  cardVehicles.innerHTML = ""
+  cardTitle.innerHTML = ""
   const valueOption = e.target.value;
   const resultFilterYear = filtrarPorAnyo(dataStudioGhibli, valueOption);
   showMovies(resultFilterYear)
 });
 
 inputBuscar.addEventListener("input", () => {
-  cardCharacters.innerHTML=""
-  cardPlaces.innerHTML=""
-  cardVehicles.innerHTML=""
-  cardTitle.innerHTML=""
+  cardCharacters.innerHTML = ""
+  cardPlaces.innerHTML = ""
+  cardVehicles.innerHTML = ""
+  cardTitle.innerHTML = ""
   const filterName = searchName(dataStudioGhibli, inputBuscar.value);
   if (filterName.length === 0) {
     alert("No se encontraron resultados");
@@ -250,10 +248,10 @@ inputBuscar.addEventListener("input", () => {
 });
 
 selectOrderMovies.addEventListener("change", (e) => {
-  cardCharacters.innerHTML=""
-  cardPlaces.innerHTML=""
-  cardVehicles.innerHTML=""
-  cardTitle.innerHTML=""
+  cardCharacters.innerHTML = ""
+  cardPlaces.innerHTML = ""
+  cardVehicles.innerHTML = ""
+  cardTitle.innerHTML = ""
   const valueOption = e.target.value;
   const resultOrderMovies = orderMovies(dataStudioGhibli, valueOption);
   showMovies(resultOrderMovies);
