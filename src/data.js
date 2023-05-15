@@ -1,24 +1,17 @@
 // estas funciones son de ejemplo
 
-export const example = () => {
-  return 'example';
-};
-
-export const anotherExample = () => {
-  return 'OMG';
-};
 
 
 //se crea funcion filtro por año
 export function filtrarPorAnyo(data, option) {
-    const datafiltrada = data.filter(pelicula => pelicula.release_date == option)
-    return datafiltrada
+  const datafiltrada = data.filter(pelicula => pelicula.release_date === option)
+  return datafiltrada
     
 }
 
 
 export function getFilmById(data, filmId) {
-  const films = data.filter(film => film.id == filmId) 
+  const films = data.filter(film => film.id === filmId) 
   return films[0]
 }
 
@@ -44,7 +37,6 @@ export function orderMovies(data,upward) {
   if(upward === "AZ"){
     return dataFiltrada
   } else {
-    const inverso = dataFiltrada.reverse();
-    return dataFiltrada
+    return dataFiltrada.reverse()
   }
 }

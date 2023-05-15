@@ -107,7 +107,7 @@ function showInfoFilm(filmId) {
   cardCharacters.innerHTML = "<h2>Personajes<hr><br></h2>"
 
   //se crea la variable que guarda la pelicula con todos los atributos(personajes-lugares-vehiculos)
-  let filmSelected = getFilmById(dataStudioGhibli, filmId)
+  const filmSelected = getFilmById(dataStudioGhibli, filmId)
 
   const divTitle = document.createElement("div")
   divTitle.innerHTML=`
@@ -137,8 +137,8 @@ function showInfoFilm(filmId) {
   cardPlaces.innerHTML = "<h2>Lugares<hr></h2>"
   filmSelected.locations.forEach((location) => {
     
-    let optionLocation;
-    optionLocation = `
+   
+    const optionLocation = `
       <div id="information-card>
         <div name="location" id=${location.name}>
         <p class="title-card">${location.name}</p>
@@ -155,8 +155,8 @@ function showInfoFilm(filmId) {
     cardVehicles.innerHTML = "<h2>Vehiculos<hr></h2>"
 
     filmSelected.vehicles.forEach((vehicle) => {
-      let optionVehicle;
-      optionVehicle = `
+      
+      const optionVehicle = `
             <div name="vehicle" id=${vehicle.name}>
             <p class="title-card">${vehicle.name}</p>
             <img class="card" src=${vehicle.img}>
@@ -172,7 +172,7 @@ function showInfoFilm(filmId) {
 function showInfoCharacter(character){
   
 
-    let info = `
+  const info = `
     <p class="title-card"><b>${character.name.toUpperCase()}</b></p><br><br>
     <p><b>Gender:</b> ${character.gender}</p>
     <p><b>Age:</b> ${character.age}</p>
@@ -181,12 +181,12 @@ function showInfoCharacter(character){
     <p><b>Specie:</b> ${character.specie}</p>
 
     `
-    modalInfo.innerHTML = info
-    modal.classList.add('show');
+  modalInfo.innerHTML = info
+  modal.classList.add('show');
 
-    close.addEventListener('click', () => {
-      modal.classList.remove('show');
-    });
+  close.addEventListener('click', () => {
+    modal.classList.remove('show');
+  });
   
    
 }
@@ -208,14 +208,14 @@ seleccionador.addEventListener("change", (e) => {
 
 //Aqui se crea la funcion para quemuestre las peliculas del director
 function showFilmsDirector(option) {
-  let filmsDirectorSlected = [];
+  const filmsDirectorSlected = [];
 
 
   //se recorren todas las peliculas para obetner las peliculas director seleccionado
   for (let i = 0; i < dataStudioGhibli.length; i++) {
 
     //se compara que el director de la pelicula en la iteracion con el director que el usuario selecciono
-    if (dataStudioGhibli[i].director == option) {
+    if (dataStudioGhibli[i].director === option) {
       //guarda en un array las peliculas del director
       filmsDirectorSlected.push(dataStudioGhibli[i]);
     }
