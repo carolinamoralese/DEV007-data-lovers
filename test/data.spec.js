@@ -109,7 +109,7 @@ describe('retunr films when usuasrio write', () => {
         }
       ]
       ;
-    expect(searchName(films, "The Cat Returns")).toStrictEqual(dataFiltered);
+    expect(searchName(films, "The Cat")).toStrictEqual(dataFiltered);
   });
 });
   
@@ -129,10 +129,13 @@ describe('retunr films A-Z', () => {
       [
         {
           "title": "Howl's Moving Castle",
+        },
+        {
+          "title": "Tales from Earthsea",
         }
       ]
       ;
-    expect(orderMovies(films, "Howl's Moving Castle")).toStrictEqual(dataFiltered);
+    expect(orderMovies(films, "AZ")).toStrictEqual(dataFiltered);
   });
 });
   
