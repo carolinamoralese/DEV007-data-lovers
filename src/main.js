@@ -1,6 +1,5 @@
 import { filtrarPorAnyo, filtrarByDirector, searchName, orderMovies, getFilmById } from './data.js'
 
-import data from './data/ghibli/ghibli.js';
 
 import data from "./data/ghibli/ghibli.js";
 
