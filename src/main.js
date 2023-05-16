@@ -1,4 +1,4 @@
-import { filtrarPorAnyo, searchName, orderMovies, getFilmById } from './data.js'
+import { filtrarPorAnyo, filtrarByDirector, searchName, orderMovies, getFilmById } from './data.js'
 
 import data from './data/ghibli/ghibli.js';
 
@@ -200,32 +200,9 @@ seleccionador.addEventListener("change", (e) => {
   cardVehicles.innerHTML=""
   cardTitle.innerHTML=""
   const valueOp = e.target.value;
-  const dataDirector = showFilmsDirector(valueOp);
+  const dataDirector = filtrarByDirector(dataStudioGhibli, valueOp);
   showMovies(dataDirector)
 });
-
-
-
-//Aqui se crea la funcion para quemuestre las peliculas del director
-function showFilmsDirector(option) {
-  const filmsDirectorSlected = [];
-
-
-  //se recorren todas las peliculas para obetner las peliculas director seleccionado
-  for (let i = 0; i < dataStudioGhibli.length; i++) {
-
-    //se compara que el director de la pelicula en la iteracion con el director que el usuario selecciono
-    if (dataStudioGhibli[i].director === option) {
-      //guarda en un array las peliculas del director
-      filmsDirectorSlected.push(dataStudioGhibli[i]);
-    }
-    // console.log(dataStudioGhibli.films[i].director)
-  }
-
-  //Aqui se borrar las peliculas del director cada vez que el usario le de click
-  return filmsDirectorSlected;
-
-}
 
 selectYear.addEventListener("change", (e) => {
   cardCharacters.innerHTML=""
@@ -236,6 +213,8 @@ selectYear.addEventListener("change", (e) => {
   const resultFilterYear = filtrarPorAnyo(dataStudioGhibli, valueOption);
   showMovies(resultFilterYear)
 });
+
+
 
 inputBuscar.addEventListener("input", () => {
   cardCharacters.innerHTML=""

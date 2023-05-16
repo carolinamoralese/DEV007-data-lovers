@@ -9,6 +9,11 @@ export function filtrarPorAnyo(data, option) {
     
 }
 
+export function filtrarByDirector(data, option){
+  const datafiltrada = data.filter(director => director.director === option)
+  return datafiltrada
+}
+
 
 export function getFilmById(data, filmId) {
   const films = data.filter(film => film.id === filmId) 

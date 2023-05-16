@@ -1,4 +1,4 @@
-import { filtrarPorAnyo } from '../src/data.js';
+import { filtrarPorAnyo, filtrarByDirector, getFilmById, searchName, orderMovies,  } from '../src/data.js';
 
 
 describe('filtrarPorAnyo', () => {
@@ -32,4 +32,107 @@ describe('retunr films by year selec', () => {
   });
 });
 
+describe('getFilmById', () => {
+  it('is a function', () => {
+    expect(typeof getFilmById).toBe("function");
+  });
+});
+
+
+describe('retunr films by director selec', () => {
+  it('returns only movies the director select`', () => {
+    const films = [
+      {
+        "title": "Castle in the Sky",
+        "director": "Hayao Miyazaki",
+      },
+      {
+        "title": "Grave of the Fireflies",
+        "director": "Isao Takahata",
+      }
+    ]
+    
+    const dataFiltered =
+      [
+        {
+          "title": "Castle in the Sky",
+          "director": "Hayao Miyazaki",
+        }
+      ]
+      ;
+    expect(filtrarByDirector(films, "Hayao Miyazaki")).toStrictEqual(dataFiltered);
+  });
+});
+  
+describe('retunr films by director selec', () => {
+  it('returns only movies the director select`', () => {
+    const films = [
+      {
+        "title": "My Neighbors the Yamadas",
+        "director": "Isao Takahata",
+      },
+      {
+        "title": "The Cat Returns",
+        "director": "Hiroyuki Morita",
+      }
+    ]
+    
+    const dataFiltered =
+      [
+        {
+          "title": "The Cat Returns",
+          "director": "Hiroyuki Morita",
+        }
+      ]
+      ;
+    expect(filtrarByDirector(films, "Hiroyuki Morita")).toStrictEqual(dataFiltered);
+  });
+});
+
+
+
+describe('retunr films when usuasrio write', () => {
+  it('retunr films when usuasrio write', () => {
+    const films = [
+      {
+        "title": "My Neighbors the Yamadas",
+      },
+      {
+        "title": "The Cat Returns",
+      }
+    ]
+    
+    const dataFiltered =
+      [
+        {
+          "title": "The Cat Returns",
+        }
+      ]
+      ;
+    expect(searchName(films, "The Cat Returns")).toStrictEqual(dataFiltered);
+  });
+});
+  
+
+describe('retunr films A-Z', () => {
+  it('retunr films when usuasrio select A-Z', () => {
+    const films = [
+      {
+        "title": "Howl's Moving Castle",
+      },
+      {
+        "title": "Tales from Earthsea",
+      }
+    ]
+    
+    const dataFiltered =
+      [
+        {
+          "title": "Howl's Moving Castle",
+        }
+      ]
+      ;
+    expect(orderMovies(films, "Howl's Moving Castle")).toStrictEqual(dataFiltered);
+  });
+});
   
