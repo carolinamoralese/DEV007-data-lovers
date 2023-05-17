@@ -213,6 +213,15 @@ button {
     font-variant: normal; 
     line-height: 26.4px;
     text-align: justify;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 5%;
+    margin-right: 5%;
+   
+   
+}
+
+td{
+    height: 150px;
+}
+tr{
+    width: 200px;
 }
