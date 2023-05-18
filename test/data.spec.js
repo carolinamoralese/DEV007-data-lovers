@@ -1,4 +1,4 @@
-import { filtrarPorAnyo, filtrarByDirector, getFilmById, searchName, orderMovies,  } from '../src/data.js';
+import { filtrarPorAnyo, filtrarByDirector, getFilmById, searchFilmsByName, orderMovies,  } from '../src/data.js';
 
 
 describe('filtrarPorAnyo', () => {
@@ -109,7 +109,7 @@ describe('retunr films when usuasrio write', () => {
         }
       ]
       ;
-    expect(searchName(films, "The Cat")).toStrictEqual(dataFiltered);
+    expect(searchFilmsByName(films, "The Cat")).toStrictEqual(dataFiltered);
   });
 });
   
