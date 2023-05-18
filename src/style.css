@@ -114,11 +114,12 @@ img.card:hover {
 .back{
     width: 200px;
     height: 70px;
-    margin-left: 90%;
+    margin-left: 95%;
     margin-bottom: 80% ;
     background-color: #758076;
     font-size: medium;
-    position: absolute;top: 96%;
+    position: absolute;
+    top: 140%;
 }
 
 .select {
