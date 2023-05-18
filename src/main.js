@@ -13,7 +13,7 @@ const modal = document.getElementById("modal");
 const modalInfo = document.getElementById("modal-info");
 const close = document.getElementById("close");
 const cardTitle = document.getElementById("card-title");
-const backToMovies = document.getElementById("backToMovies")
+const buttonBackToMovies = document.getElementById("backToMovies")
 
 
 //se obtienen los elementos de las opciones de busqueda
@@ -23,11 +23,11 @@ const inputBuscar = document.getElementById("search");
 const selectOrderMovies = document.getElementById("order-movies");
 
 
-backToMovies.style.display="none"
+buttonBackToMovies.style.display="none"
 //muestra las peliculas
 function showMovies(films) {
   cardContainer.innerHTML = "";
-  backToMovies.style.display="none"
+  buttonBackToMovies.style.display="none"
   films.forEach((film) => {
     //se muestra las peliculas, se combina HTML en el JS con las comillas invertidas
     //se pone el mismo id a los 3 elementos, titulo, imagen, div para identificar el evento del click
@@ -83,7 +83,7 @@ function showSelect(films) {
 
 
 function showInfoFilm(filmId) {
-  backToMovies.style.display="block"
+  buttonBackToMovies.style.display="block"
   cardContainer.innerHTML = "";
   cardCharacters.innerHTML = "<h2>Personajes<hr><br></h2>";
 
@@ -142,7 +142,7 @@ function showInfoFilm(filmId) {
 }
 
 function showInfoCharacter(character) {
-  backToMovies.style.display="block"
+  buttonBackToMovies.style.display="block"
   const info = `
     <p class="title-card"><b>${character.name.toUpperCase()}</b></p><br><br>
     <p><b>Gender:</b> ${character.gender}</p>
@@ -249,8 +249,8 @@ fetch("./data/ghibli/ghibli.json")
 // se muestran las peliculas y las opciones para los filtros de director y año
 showMovies(dataStudioGhibli);
 showSelect(dataStudioGhibli);
-backToMovies.addEventListener("click",back)
-function back(){
+buttonBackToMovies.addEventListener("click",backToMovies)
+function backToMovies(){
   cardCharacters.innerHTML = "";
   cardPlaces.innerHTML = "";
   cardVehicles.innerHTML = "";

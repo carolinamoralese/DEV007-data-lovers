@@ -111,16 +111,6 @@ img.card:hover {
 
 }
 
-.back{
-    width: 200px;
-    height: 70px;
-    margin-left: 95%;
-    margin-bottom: 80% ;
-    background-color: #758076;
-    font-size: medium;
-    position: absolute;
-    top: 140%;
-}
 
 .select {
     display: none;
@@ -193,7 +183,7 @@ input::placeholder {
     height: 62%;
 
 }
-button {
+.button-modal {
     background-color: #47a386;
     border: 0;
     border-radius: 5px;
