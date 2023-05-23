@@ -82,15 +82,21 @@ dejarlo mas cuadrado para que pareciera mas a una caratula de libro o pelicula.
 ### 2.2 Historia de usuario
 Al momento de realizar las encuentas para empezar nuestro proyecto el grupo de personas indico que queria
 hacer filtros para poder encontrar variar informacion de Studio Ghibli.
-Para poder realizar lo anterior se distribuyo las historias de usuarios en los diferentes Sprint
-durante el primer Sprint se hizo el filtro por director, para que cuando el usuario diera click en un director
+Para poder realizar lo anterior se distribuyo las historias de usuarios en los diferentes Sprint:
+
+- En el primer Sprint se hizo el filtro por director, para que cuando el usuario diera click en un director
 enseñara las peliculas de ese director en particular.
-En el segundo Sprint se hizo el filtro por año de lanzamiento de pelicula y el buscador, para que cuado el 
+
+- En el segundo Sprint se hizo el filtro por año de lanzamiento de pelicula y el buscador, para que cuado el 
 usuario empezara a digitar el nombre de la pelicula empezara a mostrar las peliculas relacionado con lo que 
 el usuario estuviera digitando.
-En el tercer Sprint se hizo el filtro para que ordenara las peliculas de la AZ o ZA segun lo que el usuario seleccione 
+
+- En el tercer Sprint se hizo el filtro para que ordenara las peliculas de la AZ o ZA segun lo que el usuario seleccione 
 Por ultimo se realizaron los test a todas las funciones que se realizaron para pover verificar que se este filtrando
 de manera correcta.
+
+Cabe aclarar que durante cada Sprint el proyecto era responsive, como nos recomendaron en un principio.
+
 
 ## 3. Consideraciones técnicas
 
