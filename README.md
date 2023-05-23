@@ -38,7 +38,8 @@ de éste universo.
 
 Buscamos entender quién es nuestro usuario, y qué necesita saber o ver exactamente; 
 para ésto hicimos una breve encuesta donde los fanáticos nos dijeron qué caracteríscas corresponderían
-mejor con su búsqueda, qué les gustaría encontrar y qué otras películas pueden conocer según el director y el productor de ésta.
+mejor con su búsqueda, qué les gustaría encontrar y qué otras películas pueden conocer según el director y
+el productor de ésta.
 Luego construímos la interfaz que
 les ayude a interactuar y entender mejor esos datos.
 
@@ -53,9 +54,13 @@ interfaz web donde el usuario puede visualizar y manipular data, encontrar la in
 recrearse con nuestra interfaz.
 
 Fuimos fieles al primer diseño en Figma que adaptamos para nuestro objetivo:
+
 En el siguiente link encontraremos el prototipo de alta fidelidad
+
 (https://www.figma.com/file/V9s8qZDiOlmUPoUPZXYSf3/Untitled?type=design&node-id=0-1&t=Fedv9tNBBzXHta7H-0),
+
 En el siguiente link encontraremos el prototipo de baja fidelidad
+
 https://www.figma.com/file/oLsLUKQjKjoDO81uimet37/Untitled?type=design&node-id=0-1&t=VNYlTwVYpTT2YxnA-0
 
 Prototipo de baja fidelidad:
@@ -65,6 +70,27 @@ Prototipo de baja fidelidad:
 Prototipo de alta fidelidad:
 ![Prototipo Figma](https://github.com/annmora13/DEV007-data-lovers/blob/main/Prototipo1.png)
 ![Prototipo2 Figma](https://github.com/annmora13/DEV007-data-lovers/blob/main/Prototipo2.png)
+
+### 2.1 listado de problemas que detectaste a través de tests de usabilidad
+- En el prototipo de alta fidelidad en los filtros se opto por el color verde, pero despues
+de solicitar feedback a un grupo de persona nos recomendaron cambiar de color por uno gris oscuro,
+ya que se veia mas agradable visualmente.
+- En el prototipo de alta fidelidad al momento de mostrar las peliculas se visualizaban un un cuadrado
+con puntas redondas pero al momento de solicitar feedback del proyecto el grupo de personas nos recomendo
+dejarlo mas cuadrado para que pareciera mas a una caratula de libro o pelicula.
+
+### 2.2 Historia de usuario
+Al momento de realizar las encuentas para empezar nuestro proyecto el grupo de personas indico que queria
+hacer filtros para poder encontrar variar informacion de Studio Ghibli.
+Para poder realizar lo anterior se distribuyo las historias de usuarios en los diferentes Sprint
+durante el primer Sprint se hizo el filtro por director, para que cuando el usuario diera click en un director
+enseñara las peliculas de ese director en particular.
+En el segundo Sprint se hizo el filtro por año de lanzamiento de pelicula y el buscador, para que cuado el 
+usuario empezara a digitar el nombre de la pelicula empezara a mostrar las peliculas relacionado con lo que 
+el usuario estuviera digitando.
+En el tercer Sprint se hizo el filtro para que ordenara las peliculas de la AZ o ZA segun lo que el usuario seleccione 
+Por ultimo se realizaron los test a todas las funciones que se realizaron para pover verificar que se este filtrando
+de manera correcta.
 
 ## 3. Consideraciones técnicas
 
