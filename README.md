@@ -54,6 +54,8 @@ recrearse con nuestra interfaz.
 
 Fuimos fieles al primer diseño en Figma que adaptamos para nuestro objetivo:
 (https://www.figma.com/file/V9s8qZDiOlmUPoUPZXYSf3/Untitled?type=design&node-id=0-1&t=Fedv9tNBBzXHta7H-0),
+![Captura de pantalla 2023-05-23 a la(s) 9 31 41 a m](https://github.com/carolinamoralese/DEV007-data-lovers/assets/130382737/18389236-a56e-4a0c-98a6-a7ea3db3fc5f)
+![Captura de pantalla 2023-05-23 a la(s) 9 31 28 a m](https://github.com/carolinamoralese/DEV007-data-lovers/assets/130382737/c15cae41-7ced-40c9-b229-cd16182fc2e5)
 ![Prototipo Figma](https://github.com/annmora13/DEV007-data-lovers/blob/main/Prototipo1.png)
 ![Prototipo2 Figma](https://github.com/annmora13/DEV007-data-lovers/blob/main/Prototipo2.png)
 
