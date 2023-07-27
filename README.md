@@ -1,12 +1,16 @@
 # Data Lovers
 
+https://dev-007-data-lovers-fk8s-r3bibd2sk-carolinamoralese.vercel.app/
+
 ## Índice
 
 * [1. Preámbulo](#1-preámbulo)
 * [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Consideraciones técnicas](#7-consideraciones-técnicas)
-* [4. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)
-* [5. Checklist](#9-checklist)
+* [2.1 Listado de problemas que detectaste a través de tests de usabilidad](#2.1-Listado-de-problemas-que-dectectaste-a-través-de-tests-de-usabilidad)
+* [2.2 Historia de usuarios](#2.2-Historia-de-usuario)
+* [3. Consideraciones técnicas](#3-Consideraciones-técnicas)
+* [4. Pistas, tips y lecturas complementarias](#4-pistas-tips-y-lecturas-complementarias)
+* [5. Checklist](#5-checklist)
 
 ***
 
@@ -67,11 +71,12 @@ Prototipo de baja fidelidad:
 ![Captura de pantalla 2023-05-23 a la(s) 9 31 41 a m](https://github.com/carolinamoralese/DEV007-data-lovers/assets/130382737/18389236-a56e-4a0c-98a6-a7ea3db3fc5f)
 ![Captura de pantalla 2023-05-23 a la(s) 9 31 28 a m](https://github.com/carolinamoralese/DEV007-data-lovers/assets/130382737/c15cae41-7ced-40c9-b229-cd16182fc2e5)
 
-Prototipo de alta fidelidad:
+Resultado del proyecto:
 ![Prototipo Figma](https://github.com/annmora13/DEV007-data-lovers/blob/main/Prototipo1.png)
 ![Prototipo2 Figma](https://github.com/annmora13/DEV007-data-lovers/blob/main/Prototipo2.png)
+![Prototipo3 Figma](https://github.com/carolinamoralese/DEV007-data-lovers/blob/312a60891f6a4a70308c61790dcfdcda3d5b764d/src/imagenes/Captura%20de%20pantalla%202023-07-27%20a%20la(s)%2012.41.46%20p.m..png)
 
-### 2.1 listado de problemas que detectaste a través de tests de usabilidad
+### 2.1 Listado de problemas que detectaste a través de tests de usabilidad
 - En el prototipo de alta fidelidad en los filtros se opto por el color verde, pero despues
 de solicitar feedback a un grupo de persona nos recomendaron cambiar de color por uno gris oscuro,
 ya que se veia mas agradable visualmente.
@@ -244,25 +249,6 @@ pueden ayudar:
   solamente por los que se necesiten para tu Sprint 1 (semana 1 de trabajo). Más
   pistas en la guía de organización para el proyecto.
 
-Cuando ya estés lista para codear, te sugerimos empezar de esta manera:
-
-1. Una de las integrantes del equipo debe realizar un :fork_and_knife:
-   [fork](https://help.github.com/articles/fork-a-repo/) del repo de tu cohort,
-   tus _coaches_ te compartirán un _link_ a un repo y te darán acceso de lectura
-   en ese repo. La otra integrante del equipo deber hacer un fork **del
-   repositorio de su compañera** y
-   [configurar](https://gist.github.com/BCasal/026e4c7f5c71418485c1) un `remote`
-   hacia el mismo.
-2. :arrow_down: [Clona](https://help.github.com/articles/cloning-a-repository/)
-   tu _fork_ a tu computadora (copia local).
-3. 📦 Instala las dependencias del proyecto con el comando `npm install`. Esto
-   asume que has instalado [Node.js](https://nodejs.org/) (que incluye [npm](https://docs.npmjs.com/)).
-4. Si todo ha ido bien, deberías poder ejecutar las :traffic_light:
-   pruebas unitarias (unit tests) con el comando `npm test`.
-5. Para ver la interfaz de tu programa en el navegador, usa el comando
-  `npm start` para arrancar el servidor web y dirígete a
-  `http://localhost:5000` en tu navegador.
-6. A codear se ha dicho! :rocket:
 
 ### Contenido de referencia
 
@@ -310,21 +296,21 @@ Cuando ya estés lista para codear, te sugerimos empezar de esta manera:
 
 ## 5. Checklist
 
-* [ ] Usa VanillaJS.
-* [ ] Pasa linter (`npm run pretest`)
-* [ ] Pasa tests (`npm test`)
-* [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
+* [X] Usa VanillaJS.
+* [X] Pasa linter (`npm run pretest`)
+* [X] Pasa tests (`npm test`)
+* [X] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
   lines y branches.
-* [ ] Incluye _Definición del producto_ clara e informativa en `README.md`.
-* [ ] Incluye historias de usuario en `README.md`.
-* [ ] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
+* [X] Incluye _Definición del producto_ clara e informativa en `README.md`.
+* [X] Incluye historias de usuario en `README.md`.
+* [X] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
   `README.md`.
-* [ ] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
+* [X] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
   en `README.md`.
-* [ ] Incluye link a Zeplin en `README.md`.
-* [ ] Incluye el listado de problemas que detectaste a través de tests de
+* [X] Incluye link a Zeplin en `README.md`.
+* [X] Incluye el listado de problemas que detectaste a través de tests de
   usabilidad en el `README.md`.
-* [ ] UI: Muestra lista y/o tabla con datos y/o indicadores.
-* [ ] UI: Permite ordenar data por uno o más campos (asc y desc).
-* [ ] UI: Permite filtrar data en base a una condición.
-* [ ] UI: Es _responsive_.
+* [X] UI: Muestra lista y/o tabla con datos y/o indicadores.
+* [X] UI: Permite ordenar data por uno o más campos (asc y desc).
+* [X] UI: Permite filtrar data en base a una condición.
+* [X] UI: Es _responsive_.
