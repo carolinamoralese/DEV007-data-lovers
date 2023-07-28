@@ -66,13 +66,23 @@ En el siguiente link encontraremos el prototipo de baja fidelidad
 
 https://www.figma.com/file/oLsLUKQjKjoDO81uimet37/Untitled?type=design&node-id=0-1&t=VNYlTwVYpTT2YxnA-0
 
-Prototipo de baja fidelidad:
+
+# Prototipo de baja fidelidad:
 ![Captura de pantalla 2023-05-23 a la(s) 9 31 41 a m](https://github.com/carolinamoralese/DEV007-data-lovers/assets/130382737/18389236-a56e-4a0c-98a6-a7ea3db3fc5f)
 ![Captura de pantalla 2023-05-23 a la(s) 9 31 28 a m](https://github.com/carolinamoralese/DEV007-data-lovers/assets/130382737/c15cae41-7ced-40c9-b229-cd16182fc2e5)
 
-Resultado del proyecto:
-![Prototipo Figma](https://github.com/annmora13/DEV007-data-lovers/blob/main/Prototipo1.png)
-![Prototipo2 Figma](https://github.com/annmora13/DEV007-data-lovers/blob/main/Prototipo2.png)
+## Resultado del proyecto:
+
+El resultado del proyecto es poder ver de primero todas las películas de Studio Ghibli, en esta vista el usuario podra filtrar de acuerdo al director de la película, al año de lanzamiento, ordenar de forma alfabéticamente y buscar por el nombre del pelicula
+
+![Prototipo Figma](https://github.com/carolinamoralese/DEV007-data-lovers/blob/f62795fefc6a9c0d85c679e95faf32dccfaf3843/src/imagenes/Captura%20de%20pantalla%202023-07-28%20a%20la(s)%205.08.03%20p.m..png)
+
+En la segunda vista, cuando el usuario seleccione la película que desea ver va encontrar un breve resumen de la película junto a sus personajes.
+
+![Prototipo2 Figma](https://github.com/carolinamoralese/DEV007-data-lovers/blob/f62795fefc6a9c0d85c679e95faf32dccfaf3843/src/imagenes/Captura%20de%20pantalla%202023-07-28%20a%20la(s)%205.07.31%20p.m..png)
+
+El usuario tambien pordra dar click a los personsajes de cada película para obtener una descripción detallada de este.
+
 ![Prototipo3 Figma](https://github.com/carolinamoralese/DEV007-data-lovers/blob/312a60891f6a4a70308c61790dcfdcda3d5b764d/src/imagenes/Captura%20de%20pantalla%202023-07-27%20a%20la(s)%2012.41.46%20p.m..png)
 
 ### 2.1 Listado de problemas que detectaste a través de tests de usabilidad
